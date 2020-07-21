@@ -30,6 +30,16 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
         val userController = UserController()
+
+        // default route
+        route("/") {
+            get {
+                call.respond(mapOf(
+                    "message" to "Hello World!"
+                ))
+            }
+        }
+
         // users route
         route(UserController.ROUTE) {
 
